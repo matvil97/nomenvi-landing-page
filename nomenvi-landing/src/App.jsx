@@ -1,40 +1,189 @@
-import Hero from "./components/Hero";
-import Section from "./components/Section";
-import Reveal from "./components/Reveal";
+import { motion, useScroll, useTransform } from "motion/react";
 import "./styles.css";
 
+function Reveal({ children, delay = 0, y = 36 }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        duration: 0.9,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function Hero() {
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 500], [0, 120]);
+  const bgOpacity = useTransform(scrollY, [0, 350], [1, 0.4]);
+
+  return (
+    <section className="hero hero-centered">
+      <motion.div
+        className="hero-background"
+        style={{ y: bgY, opacity: bgOpacity }}
+      />
+
+      <div className="container hero-center">
+        <Reveal>
+          <p className="eyebrow">NOMENVI</p>
+        </Reveal>
+
+        <Reveal delay={0.08}>
+          <h1 className="hero-title">
+            Transformer le second-hand en opportunité
+          </h1>
+        </Reveal>
+
+        <Reveal delay={0.14}>
+          <p className="hero-subtitle">
+            Et si vendre un vêtement en ligne devenait aussi simple que le
+            photographier ? NOMENVI développe des solutions intelligentes,
+            mobiles et accessibles pour simplifier la mise en valeur des
+            produits et fluidifier leur revente en ligne.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <div className="hero-actions">
+            <a
+              className="btn btn-primary"
+              href="https://novsuity.fr/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Soutenir NovSuity
+            </a>
+
+            <a className="btn btn-secondary" href="#vision">
+              Découvrir le projet
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ImageSection({
+  id,
+  title,
+  text,
+  image,
+  alt,
+  reverse = false,
+  children,
+}) {
+  return (
+    <section id={id} className="section">
+      <div className={`container split ${reverse ? "reverse" : ""}`}>
+        <div className="split-text">
+          <Reveal>
+            <p className="section-kicker">NOMENVI</p>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <h2 className="section-title">{title}</h2>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <p className="section-text">{text}</p>
+          </Reveal>
+
+          {children}
+        </div>
+
+        <Reveal delay={0.16}>
+          <div className="image-card">
+            <img src={image} alt={alt || title} />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Section({ id, title, text, children, centered = false }) {
+  return (
+    <section
+      id={id}
+      className={`section ${centered ? "section-centered" : ""}`}
+    >
+      <div className="container">
+        <Reveal>
+          <p className="section-kicker">NOMENVI</p>
+        </Reveal>
+
+        <Reveal delay={0.05}>
+          <h2 className="section-title">{title}</h2>
+        </Reveal>
+
+        {text && (
+          <Reveal delay={0.1}>
+            <p className="section-text">{text}</p>
+          </Reveal>
+        )}
+
+        {children}
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
+  const features = [
+    "Support pliable à accroche porte",
+    "Fonds photo interchangeables, mats et infroissables",
+    "Éclairage LED amovible",
+    "Housse de transport",
+    "Assistant intelligent inclus pendant 1 an",
+    "Solution pratique, mobile et accessible",
+  ];
+
   return (
     <main>
       <Hero />
 
       <Section
         id="vision"
+        centered
         title="Une vision née de l’expérience"
-        text="NOMENVI est née d’un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé. Face au manque de temps, à l’absence d’outils adaptés et à la difficulté d’obtenir des photos de qualité, il devenait nécessaire d’imaginer une solution pensée pour un usage concret, simple et efficace."
+        text="NOMENVI est née d’un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé. En tant qu’utilisatrice moi-même, j’ai été confrontée à ces limites : manque de temps, absence d’outils adaptés, difficulté à obtenir des photos de qualité. C’est de cette expérience concrète qu’est née l’envie de créer une solution dédiée, accessible et efficace."
       />
 
-      <Section
+      <ImageSection
         title="La fondatrice"
-        text="À l’origine de NOMENVI, une ambition claire : rendre les outils de mise en valeur produit accessibles à tous. Je pilote la stratégie, le développement produit et le lancement de NovSuity, avec une approche fondée sur la formation aux outils numériques, l’innovation et l’expérience utilisateur."
+        text="Fondatrice de NOMENVI, je pilote la stratégie, le développement produit et le lancement de NovSuity. Mon parcours s’inscrit à la croisée de la formation en outils numériques, de la création de solutions innovantes et d’une forte sensibilité à l’expérience utilisateur. Aujourd’hui, je porte une ambition claire : démocratiser des outils de mise en valeur produits pour tous."
+        image="/images/fondatrices.jpeg"
+        alt="Portrait de la fondatrice de NOMENVI"
+        reverse
       >
-        <Reveal delay={0.15}>
+        <Reveal delay={0.18}>
           <blockquote className="quote">
-            “Je veux rendre la mise en valeur produit accessible à tous.”
+            “Je veux rendre la mise en valeur produit accessible à tous, quel
+            que soit le niveau, le budget ou le contexte.”
           </blockquote>
         </Reveal>
-      </Section>
+      </ImageSection>
 
       <Section
+        centered
         title="Une équipe en construction, déjà engagée"
-        text="NOMENVI s’appuie sur un écosystème agile et complémentaire, mêlant marketing, digital, accompagnement technique et partenaires spécialisés."
+        text="NOMENVI s’appuie sur un écosystème agile et complémentaire, mêlant marketing, digital, accompagnement technique et partenaires spécialisés. Une organisation souple, orientée résultats, qui permet d’avancer rapidement tout en sécurisant le développement."
       >
         <div className="grid cards-3">
           <Reveal delay={0.05}>
             <article className="card">
               <h3>Marketing & communication</h3>
               <p>
-                Une approche terrain et réseaux sociaux, avec l’implication de ma fille.
+                Une approche terrain et réseaux sociaux, notamment avec
+                l’implication de ma fille sur ces sujets.
               </p>
             </article>
           </Reveal>
@@ -43,7 +192,8 @@ export default function App() {
             <article className="card">
               <h3>Solutions digitales & web</h3>
               <p>
-                Développement des outils et réflexion technique, avec le soutien de mon fils.
+                Développement et réflexion autour des outils numériques, avec le
+                soutien de mon fils sur les aspects techniques.
               </p>
             </article>
           </Reveal>
@@ -52,27 +202,24 @@ export default function App() {
             <article className="card">
               <h3>Partenaires & experts</h3>
               <p>
-                Design produit, prototypage, propriété intellectuelle et fabrication.
+                Design produit, prototypage, propriété intellectuelle,
+                fabrication : un réseau de partenaires spécialisés accompagne le
+                projet à chaque étape clé.
               </p>
             </article>
           </Reveal>
         </div>
       </Section>
 
-      <Section
+      <ImageSection
         title="Notre innovation : NovSuity"
-        text="Une solution pensée pour simplifier la vente en ligne d’articles, en particulier dans la mode et la seconde main."
+        text="Un dispositif pensé pour simplifier la vente en ligne d’articles, notamment dans la mode et la seconde main. Une solution concrète pour mieux présenter, photographier et publier ses produits."
+        image="/images/produit_novsuity.webp"
+        alt="Produit NovSuity en situation"
       >
         <div className="grid cards-2">
-          {[
-            "Support pliable à accroche porte",
-            "Fonds photo interchangeables",
-            "Éclairage LED amovible",
-            "Housse de transport",
-            "Assistant intelligent inclus pendant 1 an",
-            "Usage mobile, simple et concret",
-          ].map((item, index) => (
-            <Reveal key={item} delay={index * 0.05}>
+          {features.map((item, index) => (
+            <Reveal key={item} delay={0.08 + index * 0.05}>
               <article className="feature">
                 <span className="feature-dot" />
                 <p>{item}</p>
@@ -80,40 +227,87 @@ export default function App() {
             </Reveal>
           ))}
         </div>
+      </ImageSection>
+
+      <Section
+        centered
+        title="Pensé pour le quotidien"
+        text="NovSuity a été imaginé pour répondre à un usage réel : gagner du temps, améliorer le rendu visuel des articles et rendre la mise en ligne plus simple, plus fluide et plus professionnelle."
+      >
+        <div className="gallery">
+          <Reveal delay={0.05}>
+            <div className="gallery-item">
+              <img
+                src="/images/img_gallery1.webp"
+                alt="Photographie de vêtement avec un setup propre et premium"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="gallery-item">
+              <img
+                src="/images/img_gallery2.webp"
+                alt="Détail d'une mise en scène produit"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="gallery-item">
+              <img
+                src="/images/img_gallery3.webp"
+                alt="Univers mode et seconde main"
+              />
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Section
+        centered
         title="Notre ambition"
-        text="Simplifier la création de visuels produits, accélérer la mise en ligne, valoriser chaque article et encourager une consommation plus responsable."
+        text="Simplifier la création de visuels produits, accélérer la mise en ligne d’articles, valoriser chaque produit quel que soit son prix, et encourager une consommation plus responsable."
       />
 
       <Section
+        centered
         title="Une approche engagée"
-        text="En facilitant la revente et en prolongeant la durée de vie des produits, NOMENVI s’inscrit dans une logique plus durable, au service d’une économie circulaire concrète."
+        text="NOMENVI s’inscrit dans une dynamique durable : faciliter la revente, prolonger la vie des produits et réduire le gaspillage. Nous croyons qu’une meilleure présentation peut aussi encourager une économie circulaire plus concrète, plus simple et plus accessible."
       />
 
-      <section className="cta">
+      <section className="cta section-centered">
         <div className="container">
           <Reveal>
             <p className="section-kicker">Rejoindre l’aventure</p>
           </Reveal>
 
-          <Reveal delay={0.05}>
+          <Reveal delay={0.06}>
             <h2 className="cta-title">
-              Le projet entre aujourd’hui dans une phase stratégique de lancement.
+              Le projet entre aujourd’hui dans une phase stratégique de
+              lancement.
             </h2>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.12}>
+            <p className="section-text">
+              Soutenez NovSuity sur Ulule ou contactez-nous pour imaginer une
+              collaboration, un partenariat ou un accompagnement au
+              développement.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.18}>
             <div className="hero-actions">
               <a
                 className="btn btn-primary"
-                href="https://fr.ulule.com/novsuity/"
+                href="https://novsuity.fr/"
                 target="_blank"
                 rel="noreferrer"
               >
                 Soutenir NovSuity
               </a>
+
               <a className="btn btn-secondary" href="#contact">
                 Nous contacter
               </a>
@@ -122,15 +316,34 @@ export default function App() {
         </div>
       </section>
 
-      <footer id="contact" className="footer">
+      <footer id="contact" className="footer section-centered">
         <div className="container">
           <Reveal>
-            <h2 className="section-title">Contact</h2>
+            <p className="section-kicker">Contact</p>
           </Reveal>
-          <Reveal delay={0.08}>
+
+          <Reveal delay={0.05}>
+            <h2 className="section-title">Parlons du projet</h2>
+          </Reveal>
+
+          <Reveal delay={0.1}>
             <p className="section-text">
               Une question, une collaboration, un partenariat ? Écrivez-nous.
             </p>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="grid cards-2">
+              <article className="card">
+                <h3>Email</h3>
+                <p>contact@nomenvi.com</p>
+              </article>
+
+              <article className="card">
+                <h3>Campagne</h3>
+                <p>fr.ulule.com/novsuity/</p>
+              </article>
+            </div>
           </Reveal>
         </div>
       </footer>
