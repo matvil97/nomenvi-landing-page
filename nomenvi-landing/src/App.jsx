@@ -37,7 +37,7 @@ function Hero() {
 
         <Reveal delay={0.08}>
           <h1 className="hero-title">
-            Transformer le second-hand en opportunité
+            Transformer le second main en opportunité
           </h1>
         </Reveal>
 
