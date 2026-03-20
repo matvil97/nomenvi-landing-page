@@ -54,7 +54,7 @@ function Hero() {
           <div className="hero-actions">
             <a
               className="btn btn-primary"
-              href="https://novsuity.fr/"
+              href="fr.ulule.com/novsuity/"
               target="_blank"
               rel="noreferrer"
             >
@@ -301,7 +301,7 @@ export default function App() {
             <div className="hero-actions">
               <a
                 className="btn btn-primary"
-                href="https://novsuity.fr/"
+                href="fr.ulule.com/novsuity/"
                 target="_blank"
                 rel="noreferrer"
               >
