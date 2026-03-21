@@ -539,3 +539,6 @@ main {
     font-size: clamp(2.5rem, 12vw, 4rem);
   }
 }
+.text-soft {
+  color: var(--soft-text);
+}

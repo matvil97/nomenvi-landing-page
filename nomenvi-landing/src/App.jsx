@@ -37,7 +37,7 @@ function Hero() {
 
         <Reveal delay={0.08}>
           <h1 className="hero-title">
-            Transformer le second main en opportunité
+            Transformer la seconde main en opportunité
           </h1>
         </Reveal>
 
@@ -54,7 +54,7 @@ function Hero() {
           <div className="hero-actions">
             <a
               className="btn btn-primary"
-              href="fr.ulule.com/novsuity/"
+              href="https://fr.ulule.com/novsuity/"
               target="_blank"
               rel="noreferrer"
             >
@@ -137,13 +137,12 @@ function Section({ id, title, text, children, centered = false }) {
 }
 
 export default function App() {
-  const features = [
-    "Support pliable à accroche porte",
+  const productFeatures = [
+    "Support pliable à accroche sur porte",
     "Fonds photo interchangeables, mats et infroissables",
     "Éclairage LED amovible",
     "Housse de transport",
     "Assistant intelligent inclus pendant 1 an",
-    "Solution pratique, mobile et accessible",
   ];
 
   return (
@@ -212,14 +211,22 @@ export default function App() {
       </Section>
 
       <ImageSection
-        title="Notre innovation : NovSuity"
-        text="Un dispositif pensé pour simplifier la vente en ligne d’articles, notamment dans la mode et la seconde main. Une solution concrète pour mieux présenter, photographier et publier ses produits."
+        title="Le kit qui révolutionne la vente en ligne de vêtements"
+        text="Une solution innovante pour présenter, photographier et vendre plus vite, sans contraintes."
         image="/images/produit_novsuity.webp"
         alt="Produit NovSuity en situation"
       >
+        <Reveal delay={0.16}>
+          <p className="section-text text-soft" style={{ marginTop: "10px" }}>
+            Conçu pour les vendeurs de seconde main et les particuliers, ce kit
+            simplifie chaque étape : de la mise en scène à la publication de vos
+            articles.
+          </p>
+        </Reveal>
+
         <div className="grid cards-2">
-          {features.map((item, index) => (
-            <Reveal key={item} delay={0.08 + index * 0.05}>
+          {productFeatures.map((item, index) => (
+            <Reveal key={item} delay={0.2 + index * 0.05}>
               <article className="feature">
                 <span className="feature-dot" />
                 <p>{item}</p>
@@ -301,7 +308,7 @@ export default function App() {
             <div className="hero-actions">
               <a
                 className="btn btn-primary"
-                href="fr.ulule.com/novsuity/"
+                href="https://fr.ulule.com/novsuity/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -340,9 +347,13 @@ export default function App() {
               </article>
 
               <article className="card">
-                <h3>Campagne</h3>
-                <p>fr.ulule.com/novsuity/</p>
-              </article>
+  <h3>Campagne</h3>
+  <p>
+    <a href="https://fr.ulule.com/novsuity/" target="_blank" rel="noreferrer">
+      fr.ulule.com/novsuity/
+    </a>
+  </p>
+</article>
             </div>
           </Reveal>
         </div>
