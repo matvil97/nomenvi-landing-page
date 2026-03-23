@@ -14,6 +14,7 @@
   --max: 1200px;
   --radius: 24px;
   --radius-lg: 32px;
+  --title-size: clamp(2rem, 4vw, 4rem);
 }
 
 * {
@@ -108,7 +109,7 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
   margin: 0 0 24px;
@@ -534,11 +535,146 @@ main {
   .feature {
     align-items: flex-start;
   }
-
-  .hero-title {
-    font-size: clamp(2.5rem, 12vw, 4rem);
-  }
 }
 .text-soft {
   color: var(--soft-text);
+}
+.hero-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+  color: var(--text);
+  text-wrap: balance;
+  max-width: 820px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0 0 24px;
+}
+
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: grid;
+  align-items: center;
+  padding: 72px 0 28px;
+  overflow: hidden;
+}
+
+.section,
+.footer {
+  padding: 88px 0;
+  position: relative;
+}
+
+.section-title,
+.cta-title {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  max-width: 900px;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.section-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 840px;
+  margin: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.product-description {
+  margin-top: 10px;
+}
+
+.footer {
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 24px;
+}
+
+.footer-brand {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.footer-title {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.footer-text {
+  margin: 0;
+  color: var(--soft-text);
+  line-height: 1.7;
+}
+
+.footer-links {
+  display: grid;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: var(--soft-text);
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.contact-hero {
+  padding-bottom: 44px;
+}
+
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .section,
+  .footer,
+  .cta {
+    padding: 72px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 96px 0 36px;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
