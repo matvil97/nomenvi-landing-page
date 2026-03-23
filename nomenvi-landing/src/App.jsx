@@ -144,32 +144,40 @@ export default function App() {
         id="vision"
         centered
         title="Une vision née de l’expérience"
-        text="NOMENVI est née d’un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé..."
+        text="NOMENVI est née d’un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé. En tant qu’utilisatrice moi-même, j’ai été confrontée à ces limites : manque de temps, absence d’outils adaptés, difficulté à obtenir des photos de qualité. C’est de cette expérience concrète qu’est née l’envie de créer une solution dédiée, accessible et efficace."
       />
 
       <ImageSection
         title="La fondatrice"
-        text="Fondatrice de NOMENVI, je pilote la stratégie..."
+        text="Fondatrice de NOMENVI, je pilote la stratégie, le développement produit et le lancement de NovSuity. Mon parcours s’inscrit à la croisée de la formation en outils numériques, de la création de solutions innovantes et d’une forte sensibilité à l’expérience utilisateur. Aujourd’hui, je porte une ambition claire : démocratiser des outils de mise en valeur produits pour tous."
         image="/images/fondatrices.jpeg"
+        alt="Portrait de la fondatrice de NOMENVI"
         reverse
-      />
+      >
+        <Reveal delay={0.16}>
+          <blockquote className="quote">
+            “Je veux rendre la mise en valeur produit accessible à tous, quel
+            que soit le niveau, le budget ou le contexte.”
+          </blockquote>
+        </Reveal>
+      </ImageSection>
 
       <Section
         centered
         title="Une équipe en construction, déjà engagée"
-        text="NOMENVI s’appuie sur un écosystème agile..."
+        text="NOMENVI s’appuie sur un écosystème agile et complémentaire, mêlant marketing, communication, développement digital et partenaires spécialisés. Cette organisation souple et orientée résultats permet d’avancer rapidement tout en sécurisant chaque étape du développement du projet."
       />
 
       <Section
         centered
         title="Une approche engagée"
-        text="NOMENVI s’inscrit dans une dynamique durable..."
+        text="NOMENVI s’inscrit dans une dynamique durable : faciliter la revente, prolonger la vie des produits et réduire le gaspillage. Nous croyons qu’une meilleure présentation des produits peut encourager une économie circulaire plus concrète, plus simple et plus accessible à tous."
       />
 
       <Section
         centered
         title="Notre ambition"
-        text="Simplifier la création de visuels produits..."
+        text="Simplifier la création de visuels produits, accélérer la mise en ligne d’articles, valoriser chaque produit quel que soit son prix, et encourager une consommation plus responsable."
       />
 
       <ImageSection
@@ -177,33 +185,41 @@ export default function App() {
         title="Le kit qui révolutionne la vente en ligne de vêtements"
         text="Une solution innovante pour présenter, photographier et vendre plus vite, sans contraintes."
         image="/images/produit_novsuity.webp"
+        alt="Produit NovSuity en situation"
       >
-        <Reveal>
+        <Reveal delay={0.14}>
           <p className="section-text text-soft">
-            Conçu pour les vendeurs de seconde main...
+            Conçu pour les vendeurs de seconde main et les particuliers, ce kit simplifie chaque étape : de la mise en scène à la publication de vos articles. Il permet de gagner du temps, d’améliorer la qualité visuelle des produits et de professionnaliser la présentation sans compétences techniques spécifiques.
           </p>
         </Reveal>
 
         <div className="grid cards-2">
-          {productFeatures.map((item) => (
-            <article className="feature" key={item}>
-              <span className="feature-dot" />
-              <p>{item}</p>
-            </article>
+          {productFeatures.map((item, index) => (
+            <Reveal key={item} delay={0.18 + index * 0.05}>
+              <article className="feature">
+                <span className="feature-dot" />
+                <p>{item}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </ImageSection>
 
-      {/* CONTACT EN BAS */}
-
       <footer id="contact" className="footer section-centered">
         <div className="container">
-          <p className="section-kicker">Contact</p>
-          <h2 className="section-title">Parlons du projet</h2>
+          <Reveal>
+            <p className="section-kicker">Contact</p>
+          </Reveal>
 
-          <p className="section-text">
-            Une question, une collaboration, un partenariat ? Écrivez-nous.
-          </p>
+          <Reveal delay={0.05}>
+            <h2 className="section-title">Parlons du projet</h2>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="section-text">
+              Une question, une collaboration, un partenariat ou un échange autour du projet ? N’hésitez pas à nous contacter.
+            </p>
+          </Reveal>
 
           <div className="grid cards-2">
             <article className="card">
