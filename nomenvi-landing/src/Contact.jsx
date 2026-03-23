@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import "./styles.css";
-
+//
 function Reveal({ children, delay = 0, y = 24 }) {
   return (
     <motion.div
