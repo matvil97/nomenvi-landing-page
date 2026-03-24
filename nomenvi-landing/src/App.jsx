@@ -189,7 +189,11 @@ export default function App() {
       >
         <Reveal delay={0.14}>
           <p className="section-text text-soft">
-            Conçu pour les vendeurs de seconde main et les particuliers, ce kit simplifie chaque étape : de la mise en scène à la publication de vos articles. Il permet de gagner du temps, d’améliorer la qualité visuelle des produits et de professionnaliser la présentation sans compétences techniques spécifiques.
+            Conçu pour les vendeurs de seconde main et les particuliers, ce kit
+            simplifie chaque étape : de la mise en scène à la publication de vos
+            articles. Il permet de gagner du temps, d’améliorer la qualité
+            visuelle des produits et de professionnaliser la présentation sans
+            compétences techniques spécifiques.
           </p>
         </Reveal>
 
@@ -206,7 +210,7 @@ export default function App() {
       </ImageSection>
 
       <footer id="contact" className="footer section-centered">
-        <div className="container">
+        <div className="container footer-contact-container">
           <Reveal>
             <p className="section-kicker">Contact</p>
           </Reveal>
@@ -217,26 +221,31 @@ export default function App() {
 
           <Reveal delay={0.1}>
             <p className="section-text">
-              Une question, une collaboration, un partenariat ou un échange autour du projet ? N’hésitez pas à nous contacter.
+              Une question, une collaboration, un partenariat ou un échange
+              autour du projet ? N’hésitez pas à nous contacter.
             </p>
           </Reveal>
 
-          <div className="grid cards-2">
-            <article className="card">
+          <div className="grid cards-2 contact-cards">
+            <article className="card contact-card">
               <h3>Email</h3>
               <p>contact@nomenvi.com</p>
             </article>
 
-            <article className="card">
+            <article className="card contact-card">
               <h3>Site</h3>
               <p>Nomenvie.com</p>
             </article>
           </div>
 
-          <div className="footer-legal">
-            <a href="#">Mentions légales</a>
-            <a href="#">CGV / CGU</a>
-            <a href="#">Politique de confidentialité</a>
+          <div className="footer-meta">
+            <p className="footer-domain">Nomenvie.com</p>
+
+            <nav className="footer-legal-list" aria-label="Liens légaux">
+              <a href="#">Mentions légales</a>
+              <a href="#">CGV / CGU</a>
+              <a href="#">Politique de confidentialité</a>
+            </nav>
           </div>
         </div>
       </footer>
