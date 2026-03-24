@@ -32,7 +32,7 @@ function Hero() {
 
       <div className="container hero-center">
         <Reveal>
-          <p className="eyebrow">NOMENVI · Nomenvie.com</p>
+          <p className="eyebrow">NOMENVI</p>
         </Reveal>
 
         <Reveal delay={0.06}>
@@ -57,6 +57,33 @@ function Hero() {
             </a>
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Section({ id, title, text, children, centered = false }) {
+  return (
+    <section
+      id={id}
+      className={`section ${centered ? "section-centered" : ""}`}
+    >
+      <div className="container">
+        <Reveal>
+          <p className="section-kicker">NOMENVI</p>
+        </Reveal>
+
+        <Reveal delay={0.05}>
+          <h2 className="section-title">{title}</h2>
+        </Reveal>
+
+        {text && (
+          <Reveal delay={0.1}>
+            <p className="section-text">{text}</p>
+          </Reveal>
+        )}
+
+        {children}
       </div>
     </section>
   );
@@ -95,33 +122,6 @@ function ImageSection({
             <img src={image} alt={alt || title} />
           </div>
         </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function Section({ id, title, text, children, centered = false }) {
-  return (
-    <section
-      id={id}
-      className={`section ${centered ? "section-centered" : ""}`}
-    >
-      <div className="container">
-        <Reveal>
-          <p className="section-kicker">NOMENVI</p>
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <h2 className="section-title">{title}</h2>
-        </Reveal>
-
-        {text && (
-          <Reveal delay={0.1}>
-            <p className="section-text">{text}</p>
-          </Reveal>
-        )}
-
-        {children}
       </div>
     </section>
   );
@@ -180,15 +180,14 @@ export default function App() {
         text="Simplifier la création de visuels produits, accélérer la mise en ligne d’articles, valoriser chaque produit quel que soit son prix, et encourager une consommation plus responsable."
       />
 
-      <ImageSection
+      <Section
         id="novsuity"
+        centered
         title="Le kit qui révolutionne la vente en ligne de vêtements"
         text="Une solution innovante pour présenter, photographier et vendre plus vite, sans contraintes."
-        image="/images/produit_novsuity.webp"
-        alt="Produit NovSuity en situation"
       >
         <Reveal delay={0.14}>
-          <p className="section-text text-soft">
+          <p className="section-text text-soft product-text">
             Conçu pour les vendeurs de seconde main et les particuliers, ce kit
             simplifie chaque étape : de la mise en scène à la publication de vos
             articles. Il permet de gagner du temps, d’améliorer la qualité
@@ -207,7 +206,20 @@ export default function App() {
             </Reveal>
           ))}
         </div>
-      </ImageSection>
+
+        <Reveal delay={0.45}>
+          <div className="product-cta">
+            <a
+              className="btn btn-primary"
+              href="https://novsuity.fr/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              En savoir plus
+            </a>
+          </div>
+        </Reveal>
+      </Section>
 
       <footer id="contact" className="footer section-centered">
         <div className="container footer-contact-container">
@@ -226,25 +238,16 @@ export default function App() {
             </p>
           </Reveal>
 
-          <div className="grid cards-2 contact-cards">
+          <div className="grid contact-cards contact-cards-single">
             <article className="card contact-card">
               <h3>Email</h3>
               <p>contact@nomenvi.com</p>
             </article>
-
-            <article className="card contact-card">
-              <h3>Site</h3>
-              <p>Nomenvie.com</p>
-            </article>
           </div>
 
           <div className="footer-meta">
-            <p className="footer-domain">Nomenvie.com</p>
-
             <nav className="footer-legal-list" aria-label="Liens légaux">
-              <a href="#">Mentions légales</a>
-              <a href="#">CGV / CGU</a>
-              <a href="#">Politique de confidentialité</a>
+              <a href="/mentions-legales.html">Mentions légales</a>
             </nav>
           </div>
         </div>
