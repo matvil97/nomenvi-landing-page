@@ -241,12 +241,19 @@ export default function App() {
           <div className="grid contact-cards contact-cards-single">
             <article className="card contact-card">
               <h3>Email</h3>
-              <p>contact@nomenvi.com</p>
+              <p>valerie@nomenvi.com</p>
             </article>
           </div>
 
           <div className="footer-meta">
-            <nav className="footer-legal-list" aria-label="Liens légaux">
+            <nav className="footer-legal-list" aria-label="Liens de contact et légaux">
+              <a
+                href="https://www.linkedin.com/in/val%C3%A9rie-decaille-vilmen/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
               <a href="/mentions-legales.html">Mentions légales</a>
             </nav>
           </div>

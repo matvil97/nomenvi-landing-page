@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mentions légales – nomenvi.com</title>
+    <style>
+      :root {
+        --bg: #0b0b0f;
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.82);
+        --accent: #d6b57a;
+        --line: rgba(255, 255, 255, 0.1);
+        --max: 900px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(214, 181, 122, 0.12), transparent 30%),
+          linear-gradient(180deg, #09090c 0%, #0d0e13 100%);
+        color: var(--text);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+        padding: 80px 0;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        margin: 0 0 32px;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        margin: 36px 0 12px;
+        color: var(--text);
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      p + p {
+        margin-top: 12px;
+      }
+
+      .block {
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        margin-top: 24px;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      a:hover {
+        opacity: 0.85;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="eyebrow">Mentions légales – nomenvi.com</p>
+      <h1>Mentions légales</h1>
+
+      <div class="block">
+        <h2>Éditeur du site</h2>
+        <p>Le site nomenvi.com est édité par :</p>
+        <p>
+          NOMENVI<br />
+          Société par actions simplifiée (SAS)<br />
+          Siège social : 326 rue Paul Gauguin, 71000 Mâcon, France<br />
+          Email : valerie@nomenvi.com
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Responsable de la publication</h2>
+        <p>Valérie Decaille</p>
+      </div>
+
+      <div class="block">
+        <h2>Hébergement</h2>
+        <p>Le site est hébergé par :</p>
+        <p>
+          Vercel<br />
+          340 S Lemon Ave #4133<br />
+          Walnut, CA 91789<br />
+          États-Unis<br />
+          Site web :
+          <a href="https://nomenvi-landing-page.vercel.app/" target="_blank" rel="noreferrer">
+            https://nomenvi-landing-page.vercel.app/
+          </a>
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L’ensemble des contenus présents sur le site (textes, images, vidéos,
+          éléments graphiques, structure) est la propriété exclusive de NOMENVI,
+          sauf mention contraire.
+        </p>
+        <p>
+          Toute reproduction, représentation, modification ou exploitation,
+          totale ou partielle, sans autorisation préalable est strictement
+          interdite.
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Responsabilité</h2>
+        <p>
+          L’éditeur du site s’efforce de fournir des informations aussi précises
+          que possible. Toutefois, il ne pourra être tenu responsable des
+          omissions, inexactitudes ou carences dans la mise à jour.
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>Contact</h2>
+        <p>
+          Pour toute question, vous pouvez contacter :<br />
+          📧 valerie@nomenvi.com
+        </p>
+      </div>
+
+      <a class="back" href="/">Retour à l’accueil</a>
+    </div>
+  </body>
+</html>
