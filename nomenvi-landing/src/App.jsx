@@ -233,9 +233,9 @@ export default function App() {
 
           <Reveal delay={0.1}>
             <p className="section-text">
-              Une question, une collaboration, un partenariat ou un échange
-              autour du projet ? N’hésitez pas à nous contacter.
-            </p>
+            Une question, une collaboration, un partenariat ou un échange autour du projet ? <br />
+            N’hésitez pas à nous contacter.
+             </p>
           </Reveal>
 
           <div className="grid contact-cards contact-cards-single">
