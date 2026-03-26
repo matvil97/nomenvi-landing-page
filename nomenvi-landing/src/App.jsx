@@ -227,36 +227,62 @@ export default function App() {
             <p className="section-kicker">Contact</p>
           </Reveal>
 
-          <Reveal delay={0.05}>
-            <h2 className="section-title">Parlons du projet</h2>
-          </Reveal>
+<Reveal delay={0.05}>
+  <h2 className="section-title footer-title-small">Parlons du projet</h2>
+</Reveal>
 
-          <Reveal delay={0.1}>
-            <p className="section-text">
-            Une question, une collaboration, un partenariat ou un échange autour du projet ? <br />
-            N’hésitez pas à nous contacter.
-             </p>
-          </Reveal>
+<Reveal delay={0.1}>
+  <p className="section-text">
+    Une question, une collaboration, un partenariat ou un échange autour du projet ? <br />
+    N’hésitez pas à nous contacter.
+  </p>
+</Reveal>
 
-          <div className="grid contact-cards contact-cards-single">
-            <article className="card contact-card">
-              <h3>Email</h3>
-              <p>valerie@nomenvi.com</p>
-            </article>
-          </div>
+<div className="footer-meta">
+  <div className="footer-social-row">
+    <a
+      className="footer-icon-link"
+      href="mailto:valerie@nomenvi.com"
+      aria-label="Envoyer un email à NOMENVI"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.236l7.386 6.155a1 1 0 0 0 1.228 0L20 8.236V18H4z" />
+      </svg>
+    </a>
 
-          <div className="footer-meta">
-            <nav className="footer-legal-list" aria-label="Liens de contact et légaux">
-              <a
-                href="https://www.linkedin.com/in/val%C3%A9rie-decaille-vilmen/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a href="/mentions-legales.html">Mentions légales</a>
-            </nav>
-          </div>
+    <a
+      className="footer-icon-link"
+      href="https://www.linkedin.com/in/val%C3%A9rie-decaille-vilmen/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Profil LinkedIn de NOMENVI"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.036-1.849-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.849 3.37-1.849 3.601 0 4.267 2.37 4.267 5.455v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z" />
+      </svg>
+    </a>
+  </div>
+
+  <nav className="footer-legal-list" aria-label="Liens légaux">
+    <a href="/mentions-legales.html">Mentions légales</a>
+  </nav>
+
+  <p className="footer-copy">
+    © NOMENVI 2026 — Tous droits réservés
+  </p>
+</div>
         </div>
       </footer>
     </main>
