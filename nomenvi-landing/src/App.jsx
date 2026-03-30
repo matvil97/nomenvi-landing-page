@@ -188,7 +188,7 @@ export default function App() {
       >
         <Reveal delay={0.14}>
           <p className="section-text text-soft product-text">
-            Conçu pour les annonceurs et les boutiques de mode,ce kit
+            Conçu pour les annonceurs et les boutiques de mode, ce kit
             simplifie chaque étape : de la mise en scène à la publication de vos
             articles. Il permet de gagner du temps, d’améliorer la qualité
             visuelle des produits et de professionnaliser la présentation sans
