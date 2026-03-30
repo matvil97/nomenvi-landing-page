@@ -156,8 +156,8 @@ export default function App() {
       >
         <Reveal delay={0.16}>
           <blockquote className="quote">
-            “Je veux rendre la mise en valeur produit accessible à tous, quel
-            que soit le niveau, le budget ou le contexte.”
+            “Je veux rendre la mise en valeur produit accessible à tous, 
+            que vous débutiez ou que vous vendiez déjà, avec ou sans matériel”
           </blockquote>
         </Reveal>
       </ImageSection>
@@ -188,7 +188,7 @@ export default function App() {
       >
         <Reveal delay={0.14}>
           <p className="section-text text-soft product-text">
-            Conçu pour les vendeurs de seconde main et les particuliers, ce kit
+            Conçu pour les annonceurs et les boutiques de mode,ce kit
             simplifie chaque étape : de la mise en scène à la publication de vos
             articles. Il permet de gagner du temps, d’améliorer la qualité
             visuelle des produits et de professionnaliser la présentation sans
