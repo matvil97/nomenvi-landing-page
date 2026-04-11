@@ -126,7 +126,7 @@ function ImageSection({
     </section>
   );
 }
-
+//
 export default function App() {
   const productFeatures = [
     "Support pliable à accroche sur porte",
