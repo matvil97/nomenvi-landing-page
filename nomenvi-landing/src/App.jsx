@@ -126,11 +126,11 @@ function ImageSection({
     </section>
   );
 }
-//
+
 export default function App() {
   const productFeatures = [
     "Support pliable à accroche sur porte",
-    "Fonds photo interchangeables, mats et infroissables",
+    "Fonds photo interchangeables",
     "Éclairage LED amovible",
     "Housse de transport",
     "Assistant intelligent inclus pendant 1 an",
