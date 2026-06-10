@@ -43,10 +43,9 @@ function Hero() {
 
         <Reveal delay={0.12}>
           <p className="hero-subtitle">
-            Et si vendre un vêtement en ligne devenait aussi simple que le
-            photographier ? NOMENVI développe des solutions intelligentes,
-            mobiles et accessibles pour simplifier la mise en valeur des
-            produits et fluidifier leur revente en ligne.
+            NOMENVI est une plateforme SaaS et IA dédiée à la revente de mode en ligne.
+            Elle associe un kit physique à un assistant intelligent cloud pour automatiser
+            la mise en valeur des produits, de la photo à la publication sur les marketplaces.
           </p>
         </Reveal>
 
@@ -127,13 +126,54 @@ function ImageSection({
   );
 }
 
+const teamMembers = [
+  {
+    name: "Valérie Decaille",
+    role: "Fondatrice & Directrice Produit",
+    bio: "Pilote la stratégie, le développement produit et le lancement de NovSuity. Parcours à la croisée de la formation en outils numériques, de la création de solutions innovantes et d'une forte sensibilité à l'expérience utilisateur.",
+    linkedin: "https://www.linkedin.com/in/val%C3%A9rie-decaille-vilmen/",
+  },
+  {
+    name: "Matthieu Vilmen",
+    role: "Responsable Développement & CTO",
+    bio: "Architecte de la plateforme cloud et de l'assistant intelligent NOMENVI. En charge du développement full-stack, de l'intégration des APIs e-commerce et de la mise en œuvre de la feuille de route IA.",
+    linkedin: null,
+  },
+];
+
+const aiFeatures = [
+  {
+    title: "Assistant IA intégré",
+    desc: "Génération automatique de titres, descriptions optimisées et suggestions de prix pour chaque annonce, grâce à un modèle entraîné sur les données du marché de la seconde main.",
+  },
+  {
+    title: "Traitement d'image intelligent",
+    desc: "Analyse automatique des photos produits : détection des défauts, recadrage optimal, amélioration de l'éclairage et suppression d'arrière-plan en un clic.",
+  },
+  {
+    title: "Tableau de bord cloud",
+    desc: "Interface SaaS accessible depuis n'importe quel appareil. Suivi des performances d'annonces, statistiques de vente et recommandations personnalisées en temps réel.",
+  },
+  {
+    title: "Publication multi-plateformes",
+    desc: "Synchronisation et diffusion automatique vers Vinted, Leboncoin, Vestiaire Collective et autres marketplaces via des connecteurs API dédiés.",
+  },
+];
+
+const roadmapItems = [
+  { phase: "Phase 1 — Disponible", label: "Kit NovSuity + Assistant IA (accès 1 an)" },
+  { phase: "Phase 2 — 2025–2026", label: "Tableau de bord cloud & analytics vendeur" },
+  { phase: "Phase 3 — 2026", label: "API marketplaces & publication automatisée" },
+  { phase: "Phase 4 — 2026–2027", label: "IA prédictive : pricing dynamique & tendances marché" },
+];
+
 export default function App() {
   const productFeatures = [
+    "Assistant intelligent inclus pendant 1 an",
     "Support pliable à accroche sur porte",
     "Fonds photo interchangeables",
     "Éclairage LED amovible",
     "Housse de transport",
-    "Assistant intelligent inclus pendant 1 an",
   ];
 
   return (
@@ -143,54 +183,114 @@ export default function App() {
       <Section
         id="vision"
         centered
-        title="Une vision née de l’expérience"
-        text="NOMENVI est née d’un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé. En tant qu’utilisatrice moi-même, j’ai été confrontée à ces limites : manque de temps, absence d’outils adaptés, difficulté à obtenir des photos de qualité. C’est de cette expérience concrète qu’est née l’envie de créer une solution dédiée, accessible et efficace."
+        title="Une vision née de l'expérience"
+        text="NOMENVI est née d'un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé. En tant qu'utilisatrice moi-même, j'ai été confrontée à ces limites : manque de temps, absence d'outils adaptés, difficulté à obtenir des photos de qualité. C'est de cette expérience concrète qu'est née l'envie de créer une solution dédiée, accessible et efficace."
       />
 
+      <Section
+        id="plateforme"
+        centered
+        title="Une plateforme intelligente et cloud-native"
+        text="NOMENVI est avant tout une solution logicielle. Au-delà du kit physique, nous développons un écosystème digital complet : assistant IA, traitement d'image, tableau de bord cloud et connecteurs e-commerce. Notre infrastructure est conçue pour évoluer à l'échelle."
+      >
+        <div className="grid cards-2" style={{ marginTop: 36 }}>
+          {aiFeatures.map((f, i) => (
+            <Reveal key={f.title} delay={0.12 + i * 0.07}>
+              <article className="card">
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        id="roadmap"
+        centered
+        title="Feuille de route technologique"
+        text="Notre développement suit une trajectoire IA et cloud ambitieuse, de la première version disponible aujourd'hui jusqu'aux fonctionnalités prédictives planifiées pour 2027."
+      >
+        <div className="grid cards-2" style={{ marginTop: 36 }}>
+          {roadmapItems.map((item, i) => (
+            <Reveal key={item.phase} delay={0.12 + i * 0.07}>
+              <article className="feature" style={{ flexDirection: "column", alignItems: "flex-start", gap: 8 }}>
+                <p className="roadmap-phase">{item.phase}</p>
+                <p>{item.label}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
       <ImageSection
-        title="La fondatrice"
-        text="Fondatrice de NOMENVI, je pilote la stratégie, le développement produit et le lancement de NovSuity. Mon parcours s’inscrit à la croisée de la formation en outils numériques, de la création de solutions innovantes et d’une forte sensibilité à l’expérience utilisateur. Aujourd’hui, je porte une ambition claire : démocratiser des outils de mise en valeur produits pour tous."
+        title="Valérie Decaille"
+        text="Fondatrice de NOMENVI, je pilote la stratégie, le développement produit et le lancement de NovSuity. Mon parcours s'inscrit à la croisée de la formation en outils numériques, de la création de solutions innovantes et d'une forte sensibilité à l'expérience utilisateur. Aujourd'hui, je porte une ambition claire : démocratiser des outils de mise en valeur produits pour tous."
         image="/images/fondatrices.jpeg"
-        alt="Portrait de la fondatrice de NOMENVI"
+        alt="Portrait de Valérie Decaille , fondatrice de NOMENVI"
         reverse
       >
         <Reveal delay={0.16}>
           <blockquote className="quote">
-            “Je veux rendre la mise en valeur produit accessible à tous, 
-            que vous débutiez ou que vous vendiez déjà, avec ou sans matériel”
+            "Je veux rendre la mise en valeur produit accessible à tous,
+            que vous débutiez ou que vous vendiez déjà, avec ou sans matériel"
           </blockquote>
         </Reveal>
       </ImageSection>
 
       <Section
+        id="equipe"
         centered
-        title="Une équipe en construction, déjà engagée"
-        text="NOMENVI s’appuie sur un écosystème agile et complémentaire, mêlant marketing, communication, développement digital et partenaires spécialisés. Cette organisation souple et orientée résultats permet d’avancer rapidement tout en sécurisant chaque étape du développement du projet."
-      />
+        title="L'équipe"
+        text="NOMENVI est portée par une équipe complémentaire alliant vision produit, expertise digitale et développement technologique."
+      >
+        <div className="grid cards-2" style={{ marginTop: 36 }}>
+          {teamMembers.map((member, i) => (
+            <Reveal key={member.name} delay={0.12 + i * 0.1}>
+              <article className="card team-card">
+                <div className="team-header">
+                  <div>
+                    <h3 className="team-name">{member.name}</h3>
+                    <p className="team-role">{member.role}</p>
+                  </div>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`LinkedIn de ${member.name}`}
+                      className="team-linkedin"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.036-1.849-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666h-3.554V9h3.414v1.561h.049c.476-.9 1.637-1.849 3.37-1.849 3.601 0 4.267 2.37 4.267 5.455v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+                <p>{member.bio}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
       <Section
         centered
         title="Une approche engagée"
-        text="NOMENVI s’inscrit dans une dynamique durable : faciliter la revente, prolonger la vie des produits et réduire le gaspillage. Nous croyons qu’une meilleure présentation des produits peut encourager une économie circulaire plus concrète, plus simple et plus accessible à tous."
-      />
-
-      <Section
-        centered
-        title="Notre ambition"
-        text="Simplifier la création de visuels produits, accélérer la mise en ligne d’articles, valoriser chaque produit quel que soit son prix, et encourager une consommation plus responsable."
+        text="NOMENVI s'inscrit dans une dynamique durable : faciliter la revente, prolonger la vie des produits et réduire le gaspillage. Nous croyons qu'une meilleure présentation des produits peut encourager une économie circulaire plus concrète, plus simple et plus accessible à tous."
       />
 
       <Section
         id="novsuity"
         centered
-        title="Le kit qui révolutionne la vente en ligne de vêtements"
-        text="Une solution innovante pour présenter, photographier et vendre plus vite, sans contraintes."
+        title="NovSuity — le kit qui révolutionne la vente en ligne"
+        text="Une solution innovante pour présenter, photographier et vendre plus vite, sans contraintes. Le kit physique est le point d'entrée d'une expérience intelligente pilotée par notre plateforme cloud."
       >
         <Reveal delay={0.14}>
           <p className="section-text text-soft product-text">
             Conçu pour les annonceurs et les boutiques de mode, ce kit
             simplifie chaque étape : de la mise en scène à la publication de vos
-            articles. Il permet de gagner du temps, d’améliorer la qualité
+            articles. Il permet de gagner du temps, d'améliorer la qualité
             visuelle des produits et de professionnaliser la présentation sans
             compétences techniques spécifiques.
           </p>
@@ -199,7 +299,7 @@ export default function App() {
         <div className="grid cards-2">
           {productFeatures.map((item, index) => (
             <Reveal key={item} delay={0.18 + index * 0.05}>
-              <article className="feature">
+              <article className={`feature${index === 0 ? " feature-highlight" : ""}`}>
                 <span className="feature-dot" />
                 <p>{item}</p>
               </article>
@@ -234,7 +334,7 @@ export default function App() {
 <Reveal delay={0.1}>
   <p className="section-text">
     Une question, une collaboration, un partenariat ou un échange autour du projet ? <br />
-    N’hésitez pas à nous contacter.
+    N'hésitez pas à nous contacter.
   </p>
 </Reveal>
 

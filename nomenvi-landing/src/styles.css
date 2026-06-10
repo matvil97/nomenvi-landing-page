@@ -397,6 +397,70 @@ main {
   justify-content: center;
 }
 
+/* TEAM */
+
+.team-card {
+  min-height: auto;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.team-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+
+.team-role {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0;
+  font-weight: 600;
+}
+
+.team-linkedin {
+  color: var(--soft-text);
+  flex-shrink: 0;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.team-linkedin:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ROADMAP */
+
+.roadmap-phase {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* FEATURE HIGHLIGHT */
+
+.feature-highlight {
+  border-color: rgba(214, 181, 122, 0.35);
+  background: rgba(214, 181, 122, 0.07);
+}
+
+.feature-highlight p {
+  font-weight: 600;
+  color: var(--text);
+}
+
 /* FOOTER */
 
 .footer {
