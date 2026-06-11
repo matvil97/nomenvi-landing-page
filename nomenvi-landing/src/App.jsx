@@ -43,9 +43,8 @@ function Hero() {
 
         <Reveal delay={0.12}>
           <p className="hero-subtitle">
-            NOMENVI est une plateforme SaaS et IA dédiée à la revente de mode en ligne.
-            Elle associe un kit physique à un assistant intelligent cloud pour automatiser
-            la mise en valeur des produits, de la photo à la publication sur les marketplaces.
+            NOMENVI développe des solutions innovantes pour simplifier la revente en ligne.
+            Grâce à NovSuity, un studio photo portable associé à des outils numériques intelligents.
           </p>
         </Reveal>
 
