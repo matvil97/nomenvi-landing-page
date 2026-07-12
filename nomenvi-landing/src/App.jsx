@@ -321,7 +321,13 @@ export default function App() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.35}>
+        <Reveal delay={0.3}>
+          <p className="coming-soon">
+            Le kit NovSuity sera disponible prochainement. Les informations seront communiquées dans les prochains jours.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.38}>
           <div className="product-cta">
             <a
               className="btn btn-primary"
