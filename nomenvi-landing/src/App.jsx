@@ -189,8 +189,8 @@ export default function App() {
       <Section
         id="plateforme"
         centered
-        title="Une plateforme intelligente et cloud-native"
-        text="NOMENVI est avant tout une solution logicielle. Au-delà du kit physique, nous développons un écosystème digital complet : assistant IA, traitement d'image, tableau de bord cloud et connecteurs e-commerce. Notre infrastructure est conçue pour évoluer à l'échelle."
+        title="Des outils intelligents intégrés"
+        text="Au-delà du kit physique, NovSuity intègre des outils numériques intelligents : assistant IA, traitement d'image, tableau de bord cloud et connecteurs e-commerce, pour accompagner chaque étape de la vente en ligne."
       >
         <div className="grid cards-2" style={{ marginTop: 36 }}>
           {aiFeatures.map((f, i) => (
