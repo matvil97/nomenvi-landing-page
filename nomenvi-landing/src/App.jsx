@@ -182,8 +182,8 @@ export default function App() {
       <Section
         id="vision"
         centered
-        title="Une vision née de l'expérience"
-        text="NOMENVI est née d'un constat simple : mettre en valeur un article à vendre en ligne reste souvent compliqué, chronophage et peu optimisé. En tant qu'utilisatrice moi-même, j'ai été confrontée à ces limites : manque de temps, absence d'outils adaptés, difficulté à obtenir des photos de qualité. C'est de cette expérience concrète qu'est née l'envie de créer une solution dédiée, accessible et efficace."
+        title="Produits & Applications mobiles"
+        text="Nomenvi conçoit des produits innovants et des applications mobiles destinés à simplifier le quotidien. Nous développons des solutions pratiques, intuitives et accessibles, alliant innovation, design et technologie pour répondre à des besoins concrets."
       />
 
       <Section
@@ -240,8 +240,8 @@ export default function App() {
       <Section
         id="equipe"
         centered
-        title="L'équipe"
-        text="NOMENVI est portée par une équipe complémentaire alliant vision produit, expertise digitale et développement technologique."
+        title="Notre équipe"
+        text="Une équipe engagée, créative et tournée vers l'innovation. Ensemble, nous concevons des produits et des applications qui répondent à des besoins concrets, avec une attention particulière portée à la qualité, à l'expérience utilisateur et à la simplicité."
       >
         <div className="grid cards-2" style={{ marginTop: 36 }}>
           {teamMembers.map((member, i) => (
