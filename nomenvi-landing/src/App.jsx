@@ -167,12 +167,18 @@ const roadmapItems = [
 ];
 
 export default function App() {
-  const productFeatures = [
-    "Assistant intelligent inclus pendant 1 an",
+  const kitPhysique = [
     "Support pliable à accroche sur porte",
     "Fonds photo interchangeables",
     "Éclairage LED amovible",
     "Housse de transport",
+  ];
+
+  const kitNumerique = [
+    "Assistant intelligent inclus pendant 1 an",
+    "Génération automatique de titres et descriptions",
+    "Suggestions de prix basées sur le marché",
+    "Tableau de bord de suivi des annonces",
   ];
 
   return (
@@ -282,31 +288,40 @@ export default function App() {
       <Section
         id="novsuity"
         centered
-        title="NovSuity — le kit qui révolutionne la vente en ligne"
-        text="Une solution innovante pour présenter, photographier et vendre plus vite, sans contraintes. Le kit physique est le point d'entrée d'une expérience intelligente pilotée par notre plateforme cloud."
+        title="NovSuity"
+        text="Un studio photo portable conçu pour les vendeurs en ligne. Photographiez, valorisez et vendez vos articles plus vite, sans compétences techniques."
       >
-        <Reveal delay={0.14}>
-          <p className="section-text text-soft product-text">
-            Conçu pour les annonceurs et les boutiques de mode, ce kit
-            simplifie chaque étape : de la mise en scène à la publication de vos
-            articles. Il permet de gagner du temps, d'améliorer la qualité
-            visuelle des produits et de professionnaliser la présentation sans
-            compétences techniques spécifiques.
-          </p>
-        </Reveal>
+        <div className="kit-grid">
+          <Reveal delay={0.1}>
+            <div className="kit-block">
+              <p className="kit-label">Kit physique</p>
+              <ul className="kit-list">
+                {kitPhysique.map((item) => (
+                  <li key={item} className="kit-item">
+                    <span className="feature-dot" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
 
-        <div className="grid cards-2">
-          {productFeatures.map((item, index) => (
-            <Reveal key={item} delay={0.18 + index * 0.05}>
-              <article className={`feature${index === 0 ? " feature-highlight" : ""}`}>
-                <span className="feature-dot" />
-                <p>{item}</p>
-              </article>
-            </Reveal>
-          ))}
+          <Reveal delay={0.2}>
+            <div className="kit-block kit-block-digital">
+              <p className="kit-label">Outils numériques inclus</p>
+              <ul className="kit-list">
+                {kitNumerique.map((item) => (
+                  <li key={item} className="kit-item">
+                    <span className="feature-dot" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
 
-        <Reveal delay={0.45}>
+        <Reveal delay={0.35}>
           <div className="product-cta">
             <a
               className="btn btn-primary"

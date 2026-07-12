@@ -423,9 +423,66 @@ main {
 .product-text { margin-top: 10px; }
 
 .product-cta {
-  margin-top: 36px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
+}
+
+/* ── KIT SPLIT ────────────────────────────────────── */
+
+.kit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 48px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.kit-block {
+  background: var(--color-surface);
+  padding: 36px 32px;
+}
+
+.kit-block-digital {
+  background: color-mix(in srgb, var(--color-surface) 70%, var(--color-accent) 30%);
+}
+
+.kit-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+}
+
+.kit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kit-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  color: var(--color-ivory-dim);
+  line-height: 1.5;
+}
+
+.kit-block-digital .kit-item {
+  color: var(--color-ivory);
+}
+
+@media (max-width: 720px) {
+  .kit-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── FOOTER ───────────────────────────────────────── */
