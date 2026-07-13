@@ -55,14 +55,33 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Contact form (demo submission, no backend)
+  // Contact form — Formspree
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      formNote.textContent = 'Merci, votre message a bien été pris en compte.';
-      form.reset();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          formNote.textContent = 'Merci, votre message a bien été envoyé.';
+          form.reset();
+        } else {
+          formNote.textContent = 'Une erreur est survenue, veuillez réessayer.';
+        }
+      } catch {
+        formNote.textContent = 'Une erreur est survenue, veuillez réessayer.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Envoyer';
+      }
     });
   }
 
