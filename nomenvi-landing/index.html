@@ -1,16 +1,160 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./public/favicon_novsuity.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nomenvi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomenvi — Présentoir à vêtements Novsuity</title>
+<meta name="description" content="Nomenvi, société française spécialisée dans la création de produits, développe Novsuity : un présentoir à vêtements qui devient un espace de shooting photo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="#accueil" class="logo">NOMENVI</a>
+    <nav class="nav-desktop">
+      <a href="#accueil">Accueil</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="navMobile">
+    <a href="#accueil">Accueil</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="accueil">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow reveal">Nomenvi — société française de création de produits</p>
+      <h1 class="reveal">Présentez vos vêtements autrement.</h1>
+      <p class="hero-lead reveal">Nomenvi est une société française spécialisée dans la création de produits.
+        Son développement actuel porte sur un présentoir à vêtements conçu pour faciliter la présentation
+        d'articles de mode.</p>
+      <p class="hero-lead reveal">Présenter un vêtement pour une annonce représente un véritable enjeu :
+        mise en place, positionnement, facilité de prise de vue et attractivité des annonces pour
+        favoriser les ventes. Nomenvi imagine une solution pratique qui s'intègre aussi bien dans un
+        environnement domestique que professionnel.</p>
+    </div>
+    <div class="scroll-cue"><span></span></div>
+  </section>
+
+  <section class="section shooting-block" id="shooting">
+    <div class="container split">
+      <div class="split-media reveal">
+        <div class="media-frame">
+          <div class="media-glow"></div>
+          <div class="media-number">01</div>
+        </div>
+      </div>
+      <div class="split-content">
+        <p class="eyebrow reveal">Faire d'une porte un espace de shooting</p>
+        <div class="framed-box reveal">
+          <h2>Un fond qui s'adapte à chaque photo</h2>
+          <p>Le présentoir ne se contente pas d'exposer un vêtement : il devient un véritable espace
+            de prise de vue. Grâce à des fonds interchangeables, il suffit de quelques instants pour
+            composer un fond harmonieux, adapté à l'identité visuelle recherchée pour chaque photo.</p>
+          <p>Cette modularité permet de renouveler facilement le rendu des visuels, sans matériel
+            encombrant ni installation complexe. Le vêtement reste toujours au centre de l'image,
+            mis en valeur par un cadre soigné et cohérent — prêt à être photographié sous son meilleur
+            angle, à la maison comme en studio.</p>
+          <p class="framed-tag">Un arrière-plan renouvelable à volonté.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section kit-block" id="novsuity">
+    <div class="container">
+      <p class="eyebrow reveal center">Le produit</p>
+      <h2 class="reveal center">NovSuity, le kit pratique qui démocratise le shooting photo en environnement domestique</h2>
+      <p class="kit-lead reveal center">Novsuity se présente sous la forme d'un kit compact, à installer
+        en quelques secondes. Pensée pour faciliter l'expérience de shooting à domicile, la solution
+        permet à chacun de composer rapidement un espace de prise de vue propre et soigné, sans
+        compétence technique particulière.</p>
+      <div class="kit-features">
+        <div class="kit-feature reveal">
+          <span class="kit-feature-index">01</span>
+          <h3>Installation express</h3>
+          <p>Un kit prêt à l'emploi en quelques secondes, sans outil ni compétence technique.</p>
+        </div>
+        <div class="kit-feature reveal">
+          <span class="kit-feature-index">02</span>
+          <h3>Fonds interchangeables</h3>
+          <p>Un décor renouvelable à volonté pour varier le rendu de chaque photo.</p>
+        </div>
+        <div class="kit-feature reveal">
+          <span class="kit-feature-index">03</span>
+          <h3>Format compact</h3>
+          <p>Facile à ranger et à transporter, pour un usage régulier ou ponctuel.</p>
+        </div>
+        <div class="kit-feature reveal">
+          <span class="kit-feature-index">04</span>
+          <h3>Domicile ou professionnel</h3>
+          <p>Une solution qui s'intègre aussi bien chez soi qu'en studio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container cta-band-inner reveal">
+      <h2>Envie d'en savoir plus sur Novsuity ?</h2>
+      <p>Écrivez-nous, nous revenons vers vous rapidement.</p>
+      <a href="#contact" class="btn btn-primary">Prendre contact</a>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container split">
+      <div class="split-content">
+        <p class="eyebrow reveal">Contact</p>
+        <h2 class="reveal">Parlons de votre projet</h2>
+        <p class="reveal">Une question sur Novsuity ou sur Nomenvi ? Décrivez votre besoin, nous revenons
+          vers vous rapidement.</p>
+        <ul class="contact-info reveal">
+          <li><span>Adresse</span>326 Rue Paul Gauguin, 71000 Mâcon, France</li>
+          <li><span>Contact</span>Valérie Decaille, Présidente</li>
+          <li><span>Email</span>valerie@nomenvi.com</li>
+        </ul>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="logo small">NOMENVI</span>
+    <p>&copy; <span id="year"></span> Nomenvi SAS — Mâcon, France</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
