@@ -300,6 +300,10 @@ p.center { text-align: center; margin-left: auto; margin-right: auto; }
 .kit-feature p { font-size: 0.92rem; }
 
 /* CTA band */
+.novsuity-cta { border-top: 1px solid var(--color-line); }
+.novsuity-cta-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.novsuity-cta-inner h2 { margin-bottom: 0; }
+
 .cta-band { padding: 56px 0; background: var(--color-surface); border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
 .cta-band-inner { text-align: center; }
 .cta-band-inner p { margin: 14px 0 32px; font-size: 1.05rem; }
